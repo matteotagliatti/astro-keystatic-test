@@ -4,8 +4,8 @@ export default config({
   storage: {
     kind: "github",
     repo: {
-      owner: "sevenia",
-      name: "astro-keystatic-example",
+      owner: "matteotagliatti",
+      name: "astro-keystatic-test",
     },
   },
   collections: {
