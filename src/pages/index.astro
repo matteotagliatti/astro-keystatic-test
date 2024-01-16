@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const posts = await getCollection("posts");
+---
+
+<Layout title="Astro + Keystatic">
+  <div>
+    <h1 class="font-bold text-3xl">Keystatic ⚡️ + Astro 🚀</h1>
+    <p>
+      This homepage shows how to load data from Astro's content collections.
+    </p>
+    <p class="mb-4">
+      <a class="underline" href="/keystatic">Click here to visit the Admin UI</a
+      >, or the link below to view a post in the collection.
+    </p>
+    <h2 class="font-bold text-2xl">Posts</h2>
+    <ul>
+      {
+        posts.map((post) => (
+          <li class="underline">
+            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
